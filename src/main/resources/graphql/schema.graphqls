@@ -1,0 +1,49 @@
+type Query {
+    getStudent(id: ID!): Student
+    getAllStudents: [Student]
+}
+
+type Mutation {
+    createStudent(
+        name: String!,
+        email: String!,
+        address: String!,
+        dateOfBirth: String!,
+        idClassroom: Int!,
+        gender: String!,
+        nationality: String!,
+        idTeacher: ID!,
+        guardianName: String!,
+        guardianContact: String!
+    ): Student
+
+    updateStudent(
+        id: ID!,
+        name: String,
+        email: String,
+        address: String,
+        dateOfBirth: String,
+        idClassroom: Int,
+        gender: String,
+        nationality: String,
+        idTeacher: ID,
+        guardianName: String,
+        guardianContact: String
+    ): Student
+
+    deleteStudent(id: ID!): Boolean
+}
+
+type Student {
+    id: ID!
+    name: String!
+    email: String!
+    address: String!
+    dateOfBirth: String!
+    idClassroom: Int!
+    gender: String!
+    nationality: String!
+    idTeacher: ID!
+    guardianName: String!
+    guardianContact: String!
+}
